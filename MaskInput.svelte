@@ -11,6 +11,7 @@
   export let maskFormat = defaults.maskFormat;
   export let alwaysShowMask = false;
   export let showMask = false;
+  export let selectOnFocus = true;
 
   const KEYBOARD = {
     BACKSPACE: 8,
@@ -154,6 +155,9 @@
 
   function handleFocus(e) {
     canSetSelection = true;
+    if(selectOnFocus){
+      inputEl && typeof inputEl.select === 'function' && inputEl.select()
+    }
     dispatch('focus', e);
   }
 
