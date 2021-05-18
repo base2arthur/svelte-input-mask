@@ -13,6 +13,9 @@
   export let showMask = false;
   export let selectOnFocus = true;
 
+  export {className as class}
+  export let className = ""
+
   const KEYBOARD = {
     BACKSPACE: 8,
     DELETE: 46,
@@ -175,6 +178,7 @@
 </script>
 
 <input
+  class={className}
   {...$$restProps}
   value={inputValue}
   on:input={handleInput}
